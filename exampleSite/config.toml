@@ -102,6 +102,10 @@ disqusShortname = "bilberry-hugo-theme"
     # Set to -1 to hide the 'Categories' column
     amountCategoriesInFooter = 7
 
+    # How many tag should be displayed in the footer section?
+    # Set to -1 to hide the 'Tag' column
+    amountTagInFooter = 7
+
     # How many series should be displayed in the footer section?
     # Set to -1 to hide the 'Series' column
     amountSeriesInFooter = 7

@@ -43,6 +43,20 @@
         </div>
         {{ end }}
 
+        {{ if and .Site.Taxonomies.tags (gt ( .Site.Params.amountTagsInFooter | default 7 ) 0 ) }}
+        <div class="tags">
+            <a href="{{ "/tags/" | relLangURL }}"><strong>{{ i18n "tags" }}</strong></a>
+            <ul>
+                {{ range $order, $taxonomy := (first ( .Site.Params.amountTagsInFooter | default 7 ) .Site.Taxonomies.tags.ByCount) }}
+                <li>
+                    <a href="{{ (print "/tags/" ($taxonomy.Name | urlize)) | relLangURL }}">{{ $taxonomy.Name | humanize }}
+                        ({{ $taxonomy.Count }})</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
         <div class="right">
             {{ if .Site.Params.showSocialMedia | default true }}
             <div class="external-profiles">
