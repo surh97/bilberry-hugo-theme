@@ -157,6 +157,14 @@ article {
         video {
             max-width: 100%;
         }
+
+        &.all-content {
+            ul {
+                li {
+                    list-style: none;
+                }
+            }
+        }
     }
 
 
