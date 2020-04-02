@@ -15,6 +15,20 @@
         </div>
         {{ end }}
 
+        {{ if and .Site.Taxonomies.series (gt ( .Site.Params.amountSeriesInFooter | default 7 ) 0 ) }}
+        <div class="series">
+            <a href="{{ "/series/" | relLangURL }}"><strong>{{ i18n "series" }}</strong></a>
+            <ul>
+                {{ range $order, $taxonomy := (first ( .Site.Params.amountSeriesInFooter | default 7 ) .Site.Taxonomies.series.ByCount) }}
+                <li>
+                    <a href="{{ (print "/series/" ($taxonomy.Name | urlize)) | relLangURL }}">{{ $taxonomy.Name | humanize }}
+                        ({{ $taxonomy.Count }})</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
         {{ if and .Site.Taxonomies.categories (gt ( .Site.Params.amountCategoriesInFooter | default 7 ) 0 ) }}
         <div class="categories">
             <a href="{{ "/categories/" | relLangURL }}"><strong>{{ i18n "categories" }}</strong></a>

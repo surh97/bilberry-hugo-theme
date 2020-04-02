@@ -7,5 +7,6 @@ imageSlider: true   #set to false if you don't want to use the imageSlider but a
 
 categories: []
 tags: []
+series: []
 author: ""
 ---

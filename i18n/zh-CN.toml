@@ -1,6 +1,9 @@
 [categories]
 other = "分类"
 
+[series]
+other = "专题"
+
 [authors]
 other = "作者"
 

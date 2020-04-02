@@ -10,7 +10,7 @@
             <div class="content">
                 <h3>{{ i18n "authors" }}</h3>
                 <hr>
-                <ul id="all-categories">
+                <ul id="all-authors">
                     {{ range $name, $taxonomy := .Site.Taxonomies.author }}
                         <li><a href="{{ "/author/" | relLangURL }}{{ $name | urlize }}">{{ $name | humanize }} ({{ $taxonomy.Count }})</a></li>
                     {{ end }}
